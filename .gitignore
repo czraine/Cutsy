@@ -11,5 +11,6 @@
 
 
 /cutsyfrontend/.angular/cache
-/cutsyfrontend/src/app
+/cutsyfrontend/.vscode/*
+
 
