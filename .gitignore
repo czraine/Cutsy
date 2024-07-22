@@ -1,0 +1,15 @@
+/cutsyfrontend/node_modules
+/cutsy_node_server/node_modules
+
+/cutsyfrontend/npm-debug.log
+/cutsyfrontend/yarn-error.log
+/cutsyfrontend/gits.txt
+/cutsyfrontend/dist
+/cutsyfrontend/tmp
+/cutsyfrontend/out-tsc
+/cutsyfrontend/bazel-out
+
+
+/cutsyfrontend/.angular/cache
+/cutsyfrontend/src/app
+
