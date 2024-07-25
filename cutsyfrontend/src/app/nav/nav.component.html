@@ -1,0 +1,31 @@
+<div class="layout-topbar">
+  <a class="layout-topbar-logo" routerLink="">
+    <img src="assets/layout/images/logo-dark.svg" alt="logo" />
+    <span>Cutsy</span>
+  </a>
+
+  <div #topbarmenu class="layout-topbar-menu">
+    <button class="p-link Navlinks" [routerLink]="'/Subject'">
+      <strong style="margin: 20px"> Nav Element 1</strong>
+    </button>
+    <div #topbarmenu class="layout-topbar-menu">
+      <button class="p-link Navlinks" [routerLink]="'/Testing'">
+        <strong style="margin: auto"> Nav Element 2</strong>
+      </button>
+      <button class="p-link Navlinks" [routerLink]="'/ClassList'">
+        <strong style="margin: 20px">Nav Element 3</strong>
+      </button>
+      <button class="p-link layout-topbar-button" [routerLink]="'/CourseList'">
+        <i class="pi pi-calendar"></i>
+        <span>Calendar</span>
+      </button>
+      <button class="p-link layout-topbar-button">
+        <i class="pi pi-user"></i>
+        <span>Profile</span>
+      </button>
+      <p-button severity="info">
+        <span>Join Now</span>
+      </p-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="stepsdemo-content" style="width: 500px; height: auto">
+  <p-card>
+    <ng-template pTemplate="title"> Address Information </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your Address Information
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="p-fluid">
+        <div class="field">
+          <label for="address">Address</label>
+          <input
+            #address="ngModel"
+            id="address"
+            type="text"
+            required
+            pInputText
+            [(ngModel)]="contactinfos.address"
+            [ngClass]="{
+              'ng-dirty':
+                (address.invalid && submitted) ||
+                (address.dirty && address.invalid)
+            }"
+          />
+          <small
+            *ngIf="
+              (address.invalid && submitted) ||
+              (address.dirty && address.invalid)
+            "
+            class="p-error"
+            >address is required.</small
+          >
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input
+            #city="ngModel"
+            id="city"
+            type="text"
+            required
+            pInputText
+            [(ngModel)]="contactinfos.city"
+            [ngClass]="{
+              'ng-dirty':
+                (city.invalid && submitted) || (city.dirty && city.invalid)
+            }"
+          />
+          <small
+            class="p-error"
+            *ngIf="(city.invalid && submitted) || (city.dirty && city.invalid)"
+            >city is required.</small
+          >
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input
+            #state="ngModel"
+            id="state"
+            type="text"
+            required
+            pInputText
+            [(ngModel)]="contactinfos.state"
+            [ngClass]="{
+              'ng-dirty':
+                (state.invalid && submitted) || (state.dirty && state.invalid)
+            }"
+          />
+          <small
+            class="p-error"
+            *ngIf="
+              (state.invalid && submitted) || (state.dirty && state.invalid)
+            "
+            >state is required.</small
+          >
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="grid grid-nogutter justify-content-between">
+        <button
+          pButton
+          pRipple
+          label="Back"
+          icon="pi pi-angle-left"
+          [routerLink]="['/registration/personal']"
+          style="background-color: var(--primary-color); color: white"
+        ></button>
+        <button
+          pButton
+          pRipple
+          label="Next"
+          icon="pi pi-angle-right"
+          iconPos="right"
+          (click)="nextPage()"
+          [disabled]="!isFormValid()"
+          style="background-color: var(--primary-color); color: white"
+        ></button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

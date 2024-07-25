@@ -1,0 +1,93 @@
+<div class="stepsdemo-content">
+  <p-card [ngStyle]="{ width: '600px', padding: '20px', 'font-size': '16px' }">
+    <ng-template pTemplate="title"> Confirmation </ng-template>
+    <ng-template pTemplate="subtitle"> Confirm your details </ng-template>
+    <ng-template pTemplate="content">
+      <div class="field col-12">
+        <label for="class">Name : </label>
+        <b
+          >{{
+            userInfos.personalInformation.firstname
+              ? userInfos.personalInformation.firstname
+              : "-"
+          }}
+          {{
+            userInfos.personalInformation.lastname
+              ? userInfos.personalInformation.lastname
+              : "-"
+          }}</b
+        >
+      </div>
+      <div class="field col-12">
+        <label for="Email">Email : </label>
+        <b>{{
+          userInfos.personalInformation.email
+            ? userInfos.personalInformation.email
+            : "-"
+        }}</b>
+      </div>
+      <div class="field col-12">
+        <label for="phone">Phone Number : </label>
+        <b>{{
+          userInfos.personalInformation.phone
+            ? userInfos.personalInformation.phone
+            : "-"
+        }}</b>
+      </div>
+      <div class="field col-12">
+        <label for="Age"> Class : </label>
+        <b>{{
+          userInfos.accountInformation.role
+            ? userInfos.accountInformation.role.value
+            : "-"
+        }}</b>
+      </div>
+      <div class="field col-12">
+        <label for="address">address : </label>
+        <b>{{
+          userInfos.addressInformation.address
+            ? userInfos.addressInformation.address
+            : "-"
+        }}</b>
+      </div>
+      <div class="field col-12">
+        <label for="city">City : </label>
+        <b>{{
+          userInfos.addressInformation.city
+            ? userInfos.addressInformation.city
+            : "-"
+        }}</b>
+      </div>
+      <div class="field col-12">
+        <label for="state">state : </label>
+        <b>{{
+          userInfos.addressInformation.state
+            ? userInfos.addressInformation.state
+            : "-"
+        }}</b>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="grid grid-nogutter justify-content-between">
+        <button
+          pButton
+          pRipple
+          label="Back"
+          icon="pi pi-angle-left"
+          [routerLink]="['/registration/account']"
+          style="background-color: var(--primary-color); color: white"
+        ></button>
+        <button
+          pButton
+          pRipple
+          label="Complete"
+          icon="pi pi-angle-right"
+          (click)="complete()"
+          [disabled]="!isFormValid()"
+          iconPos="right"
+          styleClass="p-button-success"
+        ></button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

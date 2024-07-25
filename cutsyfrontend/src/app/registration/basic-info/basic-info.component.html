@@ -1,0 +1,118 @@
+<div class="stepsdemo-content" style="width: 500px; height: auto">
+  <p-card>
+    <ng-template pTemplate="title"> Personal Information </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your personal information
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="p-fluid">
+        <div class="field">
+          <label for="firstname">Firstname</label>
+          <input
+            #firstname="ngModel"
+            id="firstname"
+            type="text"
+            required
+            pInputText
+            [(ngModel)]="personalInformation.firstname"
+            [ngClass]="{
+              'ng-dirty':
+                (firstname.invalid && submitted) ||
+                (firstname.dirty && firstname.invalid)
+            }"
+          />
+          <small
+            *ngIf="
+              (firstname.invalid && submitted) ||
+              (firstname.dirty && firstname.invalid)
+            "
+            class="p-error"
+            >Firstname is required.</small
+          >
+        </div>
+        <div class="field">
+          <label for="lastname">Lastname</label>
+          <input
+            #lastname="ngModel"
+            id="lastname"
+            type="text"
+            required
+            pInputText
+            [(ngModel)]="personalInformation.lastname"
+            [ngClass]="{
+              'ng-dirty':
+                (lastname.invalid && submitted) ||
+                (lastname.dirty && lastname.invalid)
+            }"
+          />
+          <small
+            class="p-error"
+            *ngIf="
+              (lastname.invalid && submitted) ||
+              (lastname.dirty && lastname.invalid)
+            "
+            >Lastname is required.</small
+          >
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            #email="ngModel"
+            id="email"
+            type="email"
+            required
+            pInputText
+            [(ngModel)]="personalInformation.email"
+            [ngClass]="{
+              'ng-dirty':
+                (email.invalid && submitted) || (email.dirty && email.invalid)
+            }"
+          />
+          <small
+            class="p-error"
+            *ngIf="
+              (email.invalid && submitted) || (email.dirty && email.invalid)
+            "
+            >Please enter a valid email address.</small
+          >
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input
+            #phone="ngModel"
+            id="phone"
+            type="tel"
+            required
+            pInputText
+            [(ngModel)]="personalInformation.phone"
+            [ngClass]="{
+              'ng-dirty':
+                (phone.invalid && submitted) || (phone.dirty && phone.invalid)
+            }"
+          />
+          <small
+            class="p-error"
+            *ngIf="
+              (phone.invalid && submitted) || (phone.dirty && phone.invalid)
+            "
+            >Please enter a valid phone number.</small
+          >
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="grid grid-nogutter justify-content-end">
+        <button
+          pButton
+          pRipple
+          label="Next"
+          icon="pi pi-angle-right"
+          iconPos="right"
+          (click)="nextPage()"
+          [disabled]="!isFormValid()"
+          style="background-color: var(--primary-color); color: white"
+        ></button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
